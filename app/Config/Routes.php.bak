@@ -1,0 +1,43 @@
+<?php
+namespace Config;
+use CodeIgniter\Router\RouteCollection;
+
+/**
+ * @var RouteCollection $routes
+ */
+$routes = Services::routes();
+
+$routes->setDefaultNamespace('App\Controllers');
+$routes->setDefaultController('Home');
+$routes->setDefaultMethod('index');
+
+$routes->get('/','Home::index');
+
+// Основные разделы (латиницей)
+$routes->get('board','Board::index');
+$routes->get('tickets','Tickets::index');
+$routes->get('orders','Orders::index');
+$routes->get('tests','Tests::index');
+$routes->get('knowledge','Knowledge::index');
+
+// API
+//Коротко по методам API:
+//POST /api/json/1c/orders/export   BODY: {"order_id":123}
+//POST /api/json/1c/orders/update   BODY: {"code_1c":"ORD-0001","status":"paid","paid_total":1000.00}
+//POST /api/json/catalog/import     BODY: {"items":[{"sku":"A-1","name":"Товар","price":100.00,"code_1c":"T-1","guid_1c":"..."}]}
+//GET  /api/json/tickets/export
+//POST /api/json/tickets/update     BODY: {"items":[{"code_1c":"SUP-0002","status":"resolved"}]}
+//GET  /api/json/kb/search?q=печать
+$routes->post('api/json/1c/orders/export','Api\OneC::exportOrder');
+$routes->post('api/json/1c/orders/update','Api\OneC::updateOrder');
+$routes->post('api/json/catalog/import','Api\Catalog::import');
+$routes->get('api/json/tickets/export','Api\Tickets::export');
+$routes->post('api/json/tickets/update','Api\Tickets::update');
+$routes->get('api/json/kb/search','Api\Knowledge::search');
+
+// Операции с задачами
+$routes->post('board/task/create','Board::create');
+$routes->post('board/card/move','Board::move');
+
+// Заказы с товарами (латиницей в маршруте)
+$routes->get('orders-products','OrdersProducts::index');
