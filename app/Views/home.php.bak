@@ -1,0 +1,97 @@
+<div class="container">
+    <h1 class="mb-4">Единая система — дашборд</h1>
+
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h6 class="card-title mb-2">📌 Доска задач</h6>
+                    <p class="card-text text-muted small">План, В работе, Готово</p>
+                    <a href="/board" class="btn btn-primary btn-sm btn-block">Открыть</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h6 class="card-title mb-2">📩 Обращения</h6>
+                    <p class="card-text text-muted small">Заявки и поддержка</p>
+                    <a href="/tickets" class="btn btn-primary btn-sm btn-block">Открыть</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h6 class="card-title mb-2">📦 Заказы</h6>
+                    <p class="card-text text-muted small">Интеграция с 1С</p>
+                    <a href="/orders" class="btn btn-primary btn-sm btn-block">Открыть</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h6 class="card-title mb-2">🛒 Заказы и товары</h6>
+                    <p class="card-text text-muted small">Позиции и суммы</p>
+                    <a href="/orders-products" class="btn btn-primary btn-sm btn-block">Открыть</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h6 class="card-title mb-2">📝 Тестирование</h6>
+                    <p class="card-text text-muted small">Прохождения и результаты</p>
+                    <a href="/tests" class="btn btn-primary btn-sm btn-block">Открыть</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h6 class="card-title mb-2">📚 База знаний</h6>
+                    <p class="card-text text-muted small">Быстрый поиск статей</p>
+                    <a href="/knowledge" class="btn btn-primary btn-sm btn-block">Открыть</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h6 class="card-title mb-2">🧩 Проекты и этапы</h6>
+                    <p class="card-text text-muted small">Статусы этапов</p>
+                    <a href="/projects" class="btn btn-primary btn-sm btn-block">Открыть</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h6 class="card-title mb-2">❔ Справка</h6>
+                    <p class="card-text text-muted small">Как работать в системе</p>
+                    <a href="/help" class="btn btn-primary btn-sm btn-block">Открыть</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-header">API (для 1С и интеграций)</div>
+        <div class="card-body small">
+            <code>POST /api/json/1c/orders/export</code> — выгрузить заказ в 1С<br>
+            <code>POST /api/json/1c/orders/update</code> — принять статус/оплату из 1С<br>
+            <code>POST /api/json/catalog/import</code> — импорт товаров из 1С<br>
+            <code>GET&nbsp;&nbsp;/api/json/tickets/export</code> — выгрузка обращений<br>
+            <code>POST /api/json/tickets/update</code> — синхронизация статусов обращений<br>
+            <code>GET&nbsp;&nbsp;/api/json/kb/search?q=...</code> — поиск по базе знаний
+        </div>
+    </div>
+</div>
